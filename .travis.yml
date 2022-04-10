@@ -1,3 +1,8 @@
 language: java
 sudo: false
-script: mvn clean verify
+jdk:
+  - openjdk8
+branches:
+  only:
+    - master
+script: mvn clean package
