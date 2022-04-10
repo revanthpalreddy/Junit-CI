@@ -5,7 +5,7 @@ public class AVLTree {
         int key;
         int height;
         Node left;
-        Node right;
+        Node right ;
 
         Node(int key) {
             this.key = key;
