@@ -1,7 +1,10 @@
-language: java
-dist: trusty
+---
+after_success:
+  - "mvn org.jacoco:jacoco-maven-plugin:prepare-agent coveralls:report"
+install:
+  - "mvn test-compile -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
 jdk:
-  - oraclejdk15
-sudo: false
+  - openjdk8
+language: java
 script:
-  - mvn test
+  - "mvn test jacoco:report"
